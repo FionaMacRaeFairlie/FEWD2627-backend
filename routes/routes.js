@@ -8,14 +8,16 @@ router.get("/food", controller.listMenu);
 router.post("/addOrder", controller.addOrder);
 router.post("/deleteOrder", controller.deleteOrder);
 router.get("/new", controller.newList);
-router.get("/viewOrders", controller.listOrders);
+router.get("/viewOrders",
+  passport.authenticate("jwt", { session: false }),
+  controller.listOrders);
 router.get(
   "/appData",
   passport.authenticate("jwt", { session: false }),
   controller.displayAppData
 );
 router.post("/login", controller.processLogin)
-router.post("/register",controller.processNewUser);
+router.post("/register", controller.processNewUser);
 
 router.use(function (req, res) {
   res.status(404);

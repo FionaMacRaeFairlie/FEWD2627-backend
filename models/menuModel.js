@@ -19,6 +19,7 @@ class Menu {
       price: "2.50",
       category: "cake",
       available: "no",
+        url: "http://localhost:3001/images/1.jpg"
     });
     this.menu.insert({
       id: "2",
@@ -27,6 +28,7 @@ class Menu {
       price: "2.50",
       category: "snack",
       available: "no",
+        url: "http://localhost:3001/images/2.jpg"
     });
     this.menu.insert({
       id: "3",
@@ -35,6 +37,7 @@ class Menu {
       price: "3.50",
       category: "side",
       available: "yes",
+        url: "http://localhost:3001/images/3.jpg"
     });
     this.menu.insert({
       id: "4",
@@ -43,6 +46,7 @@ class Menu {
       price: "2.00",
       category: "drinks",
       available: "yes",
+        url: "http://localhost:3001/images/4.jpg"
     });
     this.menu.insert({
       id: "5",
@@ -51,6 +55,7 @@ class Menu {
       price: "2.50",
       category: "cake",
       available: "yes",
+        url: "http://localhost:3001/images/5.jpg"
     });
     this.menu.insert({
       id: "6",
@@ -59,6 +64,7 @@ class Menu {
       price: "2.00",
       category: "snack",
       available: "yes",
+        url: "http://localhost:3001/images/6.jpg"
     });
     this.menu.insert({
       id: "7",
@@ -67,6 +73,7 @@ class Menu {
       price: "5.00",
       category: "main",
       available: "yes",
+        url: "http://localhost:3001/images/7.jpg"
     });
     this.menu.insert({
       id: "8",
@@ -75,6 +82,7 @@ class Menu {
       price: "4.50",
       category: "main",
       available: "yes",
+        url: "http://localhost:3001/images/8.jpg"
     });
     this.menu.insert({
       id: "9",
@@ -83,6 +91,7 @@ class Menu {
       price: "3.50",
       category: "pudding",
       available: "yes",
+        url: "http://localhost:3001/images/9.jpg"
     });
     this.menu.insert({
       id: "10",
@@ -91,6 +100,7 @@ class Menu {
       price: "3.00",
       category: "pudding",
       available: "yes",
+        url: "http://localhost:3001/images/10.jpg"
     });
     this.menu.insert({
       id: "11",
@@ -99,6 +109,7 @@ class Menu {
       price: "6.50",
       category: "main",
       available: "yes",
+        url: "http://localhost:3001/images/11.jpg"
     });
     this.menu.insert({
       id: "12",
@@ -107,6 +118,7 @@ class Menu {
       price: "6.50",
       category: "main",
       available: "yes",
+        url: "http://localhost:3001/images/12.jpg"
     });
     this.menu.insert({
       id: "13",
@@ -115,6 +127,7 @@ class Menu {
       price: "2.50",
       category: "pudding",
       available: "yes",
+        url: "http://localhost:3001/images/13.jpg"
     });
     this.menu.insert({
       id: "14",
@@ -123,6 +136,7 @@ class Menu {
       price: "1.50",
       category: "drinks",
       available: "yes",
+        url: "http://localhost:3001/images/14.jpg"
     });
     this.menu.insert({
       id: "15",
@@ -131,6 +145,7 @@ class Menu {
       price: "1",
       category: "drinks",
       available: "yes",
+        url: "http://localhost:3001/images/15.jpg"
     });
     this.menu.insert({
       id: "16",
@@ -139,6 +154,7 @@ class Menu {
       price: "5.50",
       category: "main",
       available: "yes",
+        url: "http://localhost:3001/images/16.jpg"
     });
     this.menu.insert({
       id: "17",
@@ -147,6 +163,7 @@ class Menu {
       price: "3",
       category: "side",
       available: "yes",
+        url: "http://localhost:3001/images/17.jpg"
     });
     this.menu.insert({
       id: "18",
@@ -155,6 +172,7 @@ class Menu {
       price: "1.5",
       category: "drinks",
       available: "yes",
+        url: "http://localhost:3001/images/18.jpg"
     });
   }
 

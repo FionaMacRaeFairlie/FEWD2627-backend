@@ -35,7 +35,7 @@ exports.addOrder = function (req, res) {
   order.addEntry(req.body).catch((err) => {
     console.log("promise rejected", err);
   });
-  res.redirect("/");
+   res.status(201).json({ message: "order received"+ req.body });
 };
 
 exports.deleteOrder = function (req, res) {
