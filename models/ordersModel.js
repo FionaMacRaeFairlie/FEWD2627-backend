@@ -1,57 +1,41 @@
-//const nedb = require("nedb");
-const nedb = require("gray-nedb");
+import Datastore from "nedb-promises";
 
 class Orders {
   constructor(orderFilePath) {
     console.log(orderFilePath);
-    if (orderFilePath) {
-      this.order = new nedb(orderFilePath);
-      orderFilePath;
-    } else {
-      this.order = new nedb();
+    this.order = orderFilePath
+      ? Datastore.create({ filename: orderFilePath, autoload: true })
+      : Datastore.create();
+  }
+
+  async getAllEntries() {
+    try {
+      const entries = await this.order.find({});
+      console.log("function all() returns: ", entries);
+      return entries;
+    } catch (err) {
+      throw err;
     }
   }
 
-  getAllEntries() {
-    return new Promise((resolve, reject) => {
-      this.order.find({}, function (err, entries) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(entries);
-          console.log("function all() returns: ", entries);
-        }
-      });
-    });
+  async addEntry(order, id) {
+    const entry = { order, id };
+    try {
+      const doc = await this.order.insert(entry);
+      return doc;
+    } catch (err) {
+      throw err;
+    }
   }
 
-  addEntry(order, id) {
-    var entry = {
-      order: order,
-      id: id,
-    };
-    return new Promise((resolve, reject) => {
-      this.order.insert(entry, function (err, doc) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(doc);
-        }
-      });
-    });
+  async deleteEntry(id) {
+    try {
+      const doc = await this.order.remove({ _id: id }, {});
+      return doc;
+    } catch (err) {
+      throw err;
+    }
   }
-  deleteEntry(id) {
-    return new Promise((resolve, reject) => {
-      this.order.remove({_id:id},{}, function (err, doc) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(doc);
-        }
-      });
-    });
-  }
-
-
 }
-module.exports = Orders;
+
+export default Orders;

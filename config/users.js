@@ -1,5 +1,4 @@
-const Datastore = require("gray-nedb"); 
+import Datastore from "nedb-promises";
 const db = new Datastore({ filename: "./data/users.db", autoload: true });
 
-module.exports = db;
-
+export default db;

@@ -1,29 +1,28 @@
-const express = require("express");
-const cors = require('cors');
-const path = require('path');
-const passport = require('passport');
+import express from "express";
+import cors from "cors";
+import passport from "passport";
+import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 
-// Gives  access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
-require('dotenv').config();
-
+dotenv.config();
 
 const app = express();
 
-require('./config/passport')(passport);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+import passportConfig from "./config/passport.js";
+passportConfig(passport);
 
 app.use(cors());
-
-// const bodyParser  = require('body-parser');
-// app.use(bodyParser.json());
-// app.use(express.urlencoded({extended: false }));
-
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(join(__dirname, "public")));
 
-const router = require('./routes/routes');
-app.use('/', router);
+import router from "./routes/routes.js";
+app.use("/", router);
 
 app.listen(3001, () => {
   console.log("Server started on port 3001. Ctrl^c to quit.");
